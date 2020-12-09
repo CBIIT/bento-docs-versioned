@@ -31,6 +31,7 @@ author = 'CBIIT'
 extensions = [
     'sphinx.ext.githubpages',
     'sphinx_rtd_theme',
+    'recommonmark'
 ]
 
 # Add any paths that contain templates here, relative to this directory.

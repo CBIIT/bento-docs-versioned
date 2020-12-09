@@ -12,11 +12,11 @@ This is the documentation for the Bento framework!
    :maxdepth: 2
    :caption: Contents:
 
+   installation/README
 
 
 Indices and tables
 ==================
 
 * :ref:`genindex`
-* :ref:`modindex`
 * :ref:`search`
