@@ -65,7 +65,7 @@ Strategy for Bento security can be thought of in two ways i.e. Static and Dynami
 
 The Dynamic Security components focuses on the deployed infrastructure and the application. IBM AppScan is utilized to periodically run vulnerability scans on the Bento Web Application. The vulnerabilities identified are then remedied in the current Sprint or added to the Sprint Backlog for future action depending upon the severity. The security of the network and instances utilize AWS recommended best practices. The access to the Web instances is allowed only via the ALB and on specific ports only using AWS Security Groups which act as an instance Firewall. Placing the ALB on a Public Subnet and instances on Private Subnets with a NAT (Network Address Translator) using Route Tables provides network level isolation for the instances keeping the virtual machines secure from malicious traffic while allowing them to get software updates as necessary.
 
-# Bento – Frontend Documentation
+## Bento – Frontend Documentation
 
 **1-Technical Stack**
 
@@ -170,7 +170,7 @@ Redux is a state management system. Therefore, we will need:
 - Method to change the state
   - **action &amp; reducer** is the method to change the mapStateToProps. Redux update the state through action and reducer. The action tell reducer what it wants to do. Then the reducer updates the state base on the type and additional data provided by action
 
-# Bento – Backend &amp; API Architecture Documentation
+## Bento – Backend &amp; API Architecture Documentation
 
 **Backend &amp; API Documentation General Overview**
 
