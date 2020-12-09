@@ -9,11 +9,19 @@ Welcome to Bento's documentation!
 This is the documentation for the Bento framework!
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+    :maxdepth: 2
+    :caption: Contents:
 
-   installation/README
+    installation/README
+    configuration/configuration
+    data-and-modeling/README
+    project-info/README
 
+.. toctree::
+    :maxdepth: 1
+
+    overview
+    about
 
 Indices and tables
 ==================
