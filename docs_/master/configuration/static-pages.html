@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Static Pages &#8212; Bento  documentation</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Data and Modeling" href="../data-and-modeling/README.html" />
+    <link rel="prev" title="Cart Workflow" href="cart-workflow.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="static-pages">
+<h1>Static Pages<a class="headerlink" href="#static-pages" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>There are a number of static pages that are available for the Bento framework. These are traditionally available by navigating to the “About” link on the Navigation Bar. In the example below, the static pages are “Bento”, “Resources”, and “GraphQL”.</p>
+<p>&nbsp;</p></div>
+<div class="section" id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Fork the GitHub repo <code class="docutils literal notranslate"><span class="pre">https://github.com/CBIIT/bento-frontend</span></code> (representing your GitHub username as <code class="docutils literal notranslate"><span class="pre">YOUR-USERNAME</span></code>)</p></li>
+<li><p>Create a local clone of your fork into a local directory, represented here as <code class="docutils literal notranslate"><span class="pre">$(src)</span></code>.</p></li>
+</ol>
+<p>&nbsp;</p></div>
+<div class="section" id="instructions">
+<h2>Instructions<a class="headerlink" href="#instructions" title="Permalink to this headline">¶</a></h2>
+<p><img alt="About on Navigation Bar" src="../_images/static-pages-bento.png" /></p>
+<div class="section" id="make-and-test-the-local-environment-changes-changes">
+<h3>Make and Test the local environment changes changes<a class="headerlink" href="#make-and-test-the-local-environment-changes-changes" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p>Edit file: <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/.env</span></code></p></li>
+<li><p>Change the <code class="docutils literal notranslate"><span class="pre">REACT_APP_ABOUT_CONTENT_URL</span></code> variable to gibberish. One example <code class="docutils literal notranslate"><span class="pre">REACT_APP_ABOUT_CONTENT_URL= https://raw.githubusercondsdsdstent.com/CBIIT/bento-frontend/master/src/content/prod/aboutPagesContent.yaml</span></code></p></li>
+<li><p>Now edit <code class="docutils literal notranslate"><span class="pre">$(src)/bento-frontend/src/content/prod/aboutPagesContent.yaml</span></code>, and the system will show the changes</p></li>
+</ol>
+</div>
+<div class="section" id="to-create-a-new-static-page-with-new-route">
+<h3>To Create A New Static Page with new Route<a class="headerlink" href="#to-create-a-new-static-page-with-new-route" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p>Edit <code class="docutils literal notranslate"><span class="pre">$(src)/bento/aboutPagesRoutes.js</span></code> add a new path</p></li>
+<li><p>Add a new copy of yaml property to  with page name matching above path</p></li>
+</ol>
+</div>
+<div class="section" id="edit-configuration-file">
+<h3>Edit configuration file<a class="headerlink" href="#edit-configuration-file" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p>There is a maximum of 6 pages that can appear under “About”. If no informational pages are configured to be displayed, the “About” menu option will be hidden.</p></li>
+<li><p>To add contents to the ‘About’ menu, see <a class="reference external" href="configuration/global-ui-elements.html#global-navigation-bar">“Global Navigation Bar” instructions</a></p></li>
+<li><p>To edit the title for each page in the ‘About’ menu:</p>
+<ul class="simple">
+<li><p>edit file: <code class="docutils literal notranslate"><span class="pre">$(src)/aboutPagesContent.yaml</span></code></p></li>
+<li><p>set the variable <code class="docutils literal notranslate"><span class="pre">title</span></code> to have the title of the page.</p></li>
+</ul>
+</li>
+<li><p>To set the primary or “hero” image to be tiled onto each page:</p>
+<ul class="simple">
+<li><p>edit file: <code class="docutils literal notranslate"><span class="pre">$(src)/aboutPagesContent.yaml</span></code></p></li>
+<li><p>set variable <code class="docutils literal notranslate"><span class="pre">primaryContentImage</span></code> with the desired image</p></li>
+<li><p>NOTE: You cannot use the local file for this you should point to an external image url (e.g. publicly-available, on the internet)</p></li>
+</ul>
+</li>
+<li><p>To set a secondary image (including, a zoom and scan-around function):</p>
+<ul class="simple">
+<li><p>Edit <code class="docutils literal notranslate"><span class="pre">$(src)/aboutPagesContent.yaml</span></code></p></li>
+<li><p>Add the Field secondaryZoomImage to show up the secondary Image</p></li>
+</ul>
+</li>
+<li><p>To add content for each page: (including basic formatting of it, i.e. line/paragraph breaks, bold type, hyperlinked text), follow the following syntax guide</p>
+<ul class="simple">
+<li><p>Note: The pages need to be in ‘YAML’ format</p></li>
+</ul>
+</li>
+</ol>
+<p>| Element                                            | Syntax                                                     | Example                                                      |
+| ————————————————– | ———————————————————- | ———————————————————— |
+| Link or Download  File from externally hosted file | <code class="docutils literal notranslate"><span class="pre">$$[title](link)$$</span></code>                                        | <code class="docutils literal notranslate"><span class="pre">$$[Cloud</span> <span class="pre">Resources](https://datascience.cancer.gov/data-commons/cloud-resources)$$</span></code><br /> (opens in new tab with link-out icon) |
+| Bold Title                                         | <code class="docutils literal notranslate"><span class="pre">$$#text#$$</span></code>                                               | <code class="docutils literal notranslate"><span class="pre">$$#Cloud</span> <span class="pre">Resourses#$$</span></code>                                      |
+| Bold Inline Text                                   | <code class="docutils literal notranslate"><span class="pre">$$*text*$$</span></code>                                               | <code class="docutils literal notranslate"><span class="pre">$$&#64;CloudResourses&#64;$$</span></code>                                       |
+| Download Submission PDF                            | <code class="docutils literal notranslate"><span class="pre">$${Text}$$</span></code>                                               | <code class="docutils literal notranslate"><span class="pre">$${submission</span> <span class="pre">guide</span> <span class="pre">[PDF]}$$</span></code>                               |
+| Enhanced Link                                      | <code class="docutils literal notranslate"><span class="pre">$$[Title](target:[_self]</span> <span class="pre">url:[url]</span> <span class="pre">type:[Optional]</span> <span class="pre">)$$</span></code>   | <code class="docutils literal notranslate"><span class="pre">$$[Testing](target:_self</span> <span class="pre">url:/#/developers</span> <span class="pre">type:0)$$</span></code><br />(opens in same page without link-out icon) |
+| Enhanced Link                                      | <code class="docutils literal notranslate"><span class="pre">$$[Title](target:[_blank]</span> <span class="pre">url:[url]</span> <span class="pre">type:[Optional]</span>&#160; <span class="pre">)$$</span></code> | <code class="docutils literal notranslate"><span class="pre">$$[Testing](target:_blankurl:/#/developers</span> <span class="pre">type:0)$$</span></code><br />(opens in new tab without link-out icon) |</p>
+</div>
+</div>
+<div class="section" id="best-practices">
+<h2>Best Practices<a class="headerlink" href="#best-practices" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>It is recommended to have the title of each page in the ‘About’ menu match the title on the actual page.</p></li>
+<li><p>The suggested syntax for YAML files is to use 2 spaces for indentation, but YAML will follow whatever indentation system that the individual file uses. In our files we used 2 spaces to represent</p></li>
+</ol>
+</div>
+</div>
+
+
+          </div>
+              <div class="related bottom">
+                &nbsp;
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="cart-workflow.html" title="Previous document">Cart Workflow</a>
+        </li>
+        <li>
+          <a href="../data-and-modeling/README.html" title="Next document">Data and Modeling</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+              </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3>Versions</h3>
+<ul>
+  <li><a href="../../v1.1.1/index.html">v1.1.1</a></li>
+  <li><a href="static-pages.html">master</a></li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, CBIIT.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.3.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/configuration/static-pages.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+    <a href="https://github.com/CBIIT/bento-docs-versioned" class="github">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"  class="github"/>
+    </a>
+    
+
+    
+  </body>
+</html>

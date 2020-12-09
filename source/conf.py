@@ -42,7 +42,13 @@ templates_path = ['_templates']
 
 # replace versions.html
 html_sidebars = { 
-    "**": ['versioning.html'],
+    "**": [
+        "about.html",
+        "navigation.html",
+        "relations.html",
+        "searchbox.html",
+        "versioning.html",
+    ],
 }
 
 #html_sidebars = {
@@ -99,6 +105,9 @@ html_static_path = ['_static']
 
 
 # Whitelist pattern for tags (set to None to ignore all tags)
-smv_tag_whitelist = r'^.*$'                   # Include all tags
+#smv_tag_whitelist = r'^.*$'                   # Include all tags
 # Pattern for released versions
-smv_released_pattern = r'^tags/.*$'
+#smv_released_pattern = r'^tags/.*$'
+
+smv_remote_whitelist = r"^origin$"
+smv_branch_whitelist = r"^master$"
