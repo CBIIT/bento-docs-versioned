@@ -6,6 +6,8 @@
 Welcome to Bento's documentation!
 =================================
 
+This is the documentation for the Bento framework!
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
